@@ -1,8 +1,13 @@
 module.exports = function() {
   // Add .ts extension for store, middleware and more
   this.nuxt.options.extensions.push("ts")
+  const dev = this.options.dev
   // Extend build
   this.extendBuild(config => {
+    if(dev){
+      // config.devtool = 'inline-source-map'
+      console.log(config.devtool)
+    }
     const tsLoader = {
       loader: "ts-loader",
       options: {
