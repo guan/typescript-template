@@ -5,8 +5,7 @@ module.exports = function() {
   // Extend build
   this.extendBuild(config => {
     if(dev){
-      // config.devtool = 'inline-source-map'
-      console.log(config.devtool)
+      config.devtool = 'inline-source-map'
     }
     const tsLoader = {
       loader: "ts-loader",
